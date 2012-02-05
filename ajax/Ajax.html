@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ajax妯″潡</title>
+	<meta charset="gb2312"/>
+    <title>Ajax模块</title>
 </head>
 <body>
 <div id="data"></div>
 <script src="ajax.js"></script>
 <script type="text/javascript">
-    //鎵ц
+    //执行
     Ajax.doAjax("GET","ajaxData.html",true,function(txt){
         document.getElementById('data').innerHTML=txt;
     })
