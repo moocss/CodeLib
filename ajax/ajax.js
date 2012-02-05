@@ -1,14 +1,14 @@
-/*
-    * Ajax Object
-    * 2012-02-01
-    * */
-    var Ajax=Ajax || {};
-
-    // IE7以上、Firefox、Chrome、Opera、Safari支持本地Javascript对象。
-    Ajax.createXHR = function(){
-       if( typeof XMLHttpRequest !="undefined" ){
+/* *
+ * Ajax
+ * 2012-02-01
+* */
+var Ajax=Ajax || {};
+Ajax={
+	// IE7以上、Firefox、Chrome、Opera、Safari支持本地Javascript对象。
+	createXHR:function(){
+		if( typeof XMLHttpRequest !="undefined" ){
             return new XMLHttpRequest();
-       }else if( typeof ActiveXObject != "undefined"){
+		}else if( typeof ActiveXObject != "undefined"){
            if( typeof arguments.callee.activeXString != "string" ){
                var versions=[ "MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp" ];
                for( var i=0,len=versions.length;i<len;i++ ){
@@ -23,9 +23,9 @@
        }else{
            throw new Error( "No xhr object available.")
        }
-    };
-    Ajax.responseType=function( request ){
-        var _responseType = request.getResponseHeader("Content-Type");
+	},
+	responseType:function(request){
+		var _responseType = request.getResponseHeader("Content-Type");
         switch( _responseType ){
             case "text/xml" :
                 return request.responseXML;
@@ -37,10 +37,9 @@
             default:
                 return request.responseText;
         }
-
-    };
-    Ajax.encodeFormData=function(data){
-        var _pairs = [];
+	},
+	encodeFormData:function(data){
+		var _pairs = [];
         var _regexp = /%20/g;
         for( var name in data ){
             var _value = data[ name ].toString();
@@ -48,9 +47,8 @@
             _pairs.push(_pair);
         }
         return _pairs.join("&");
-    };
-
-    /*
+	},
+	 /*
     * method: GET 、 POST
     * url: 请求的地址
     * asyn : 请求方式( false:同步、true: 异步 )
@@ -58,8 +56,8 @@
     * callback :请求成功回调函数
     * errorHandle :请求失败回调函数
     * */
-    Ajax.doAjax = function( method,url,asyn,callback,value,errorHandle ){
-        var _xhr = Ajax.createXHR();
+	doAjax:function(method,url,asyn,callback,data,errorHandle){
+		var _xhr = Ajax.createXHR();
         _xhr.onreadystatechange=function(){
             if( _xhr.readyState == 4 ){
                 if( _xhr.status >= 200 && _xhr.status < 300 || _xhr.status == 304 ){
@@ -78,6 +76,7 @@
             _xhr.send( null );
         }else if( method=="POST" ){
             _xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-            _xhr.send( Ajax.encodeFormData(value) );
+            _xhr.send( Ajax.encodeFormData(data) );
         }
-    };
+	}
+}
