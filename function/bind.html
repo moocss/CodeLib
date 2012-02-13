@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <title>函数绑定与函数柯里化</title>
+	<script src="bind.js"></script>
+	<script src="../EventUtil/EventUtil.js"></script>
+</head>
+<body>
+<input type="button" value="函数柯里化" id="btn"/>
+<input type="button" value="相加" id="addBtn"/>
+<script>
+    var handler={
+        message:"Event handled",
+        handleClick:function(name,event){
+            alert(this.message + ":" + name + ":" + event.type);
+        }
+    };
+    function add(num1,num2){
+        alert( num1+num2 );
+    }
+    var btn = document.getElementById('btn');
+    EventUtil.addEvent(btn,"click",bind(handler.handleClick,handler,"btn"));
+    var addBtn = document.getElementById("addBtn");
+    EventUtil.addEvent(addBtn,"click",bind(add,"window",3,5));
+</script>
+</body>
+</html>
