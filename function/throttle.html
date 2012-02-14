@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>函数节流</title>
+    <style>
+        *{ margin: 0; padding:0}
+        #myDiv{ border:1px solid #000; width:400px;}
+    </style>
+</head>
+<body>
+<div id="myDiv">函数节流</div>
+<script src="throttle.js"></script>
+<script>
+     function resizeDiv(){
+        var div = document.getElementById('myDiv');
+        div.style.height = div.offsetWidth +"px";
+    }
+    window.onresize = function(){
+        //throttle(resizeDiv);
+        processor.process(resizeDiv);
+    }
+
+</script>
+</body>
+</html>
