@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拖拽</title>
+    <style>
+        *{ margin: 0; padding:0}
+        .draggable{ position: absolute; background: #f00; width: 40px; height: 40px;}
+        .dv1{ background: #f00;left:40px; top:40px;}
+        .dv2{ background: #000;left:40px; top:120px;}
+    </style>
+    <script src="../EventUtil/EventUtil.js"></script>
+	 <script src="dragdrop.js"></script>
+</head>
+<body>
+<div class="draggable dv1"></div>
+<div class="draggable dv2"></div>
+<script>
+    DrapDrop.enable();
+</script>
+</body>
+</html>

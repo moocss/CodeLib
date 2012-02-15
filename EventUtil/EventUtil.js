@@ -3,6 +3,7 @@
  * 2012-02-13
 * */
 var EventUtil = EventUtil || {};
+
 EventUtil.addEvent = function(obj,otype,fn){
 	if( obj.addEventListener ){
 		obj.addEventListener( otype,fn,false );
@@ -11,7 +12,8 @@ EventUtil.addEvent = function(obj,otype,fn){
 	}else{
 		obj['on'+otype ] = fn;
 	}
-} 
+};
+
 EventUtil.removeEvent = function(obj,otype,fn){
 	if( obj.removeEventListener ){
 		obj.removeEventListener(otype,fn,false);
@@ -20,4 +22,12 @@ EventUtil.removeEvent = function(obj,otype,fn){
 	}else{
 		obj['on'+otype]=null;
 	}
-}
+};
+
+EventUtil.getEvent = function(event){
+    return  event || window.event;
+};
+
+EventUtil.getTarget = function(event){
+     return event.target || event.srcElement;
+};
