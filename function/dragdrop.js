@@ -3,16 +3,17 @@
  * 2012-02-16
 * */
 
-var DrapDrop = function(){
+ var DrapDrop = function( targetClass ){
         var dragging = null,
             diffx = 0,
-            diffy = 0;
+            diffy = 0,
+            _targetClass = targetClass;
         function handleEvent(event){
             event = EventUtil.getEvent( event );
             var target = EventUtil.getTarget( event );
             switch( event.type ){
                 case "mousedown":
-                    if( target.className.indexOf("draggable") > -1 ){
+                    if( target.className.indexOf( _targetClass ) > -1 ){
                         dragging = target;
                         //计算左上角与鼠标位置的距离
                         diffx = event.clientX - target.offsetLeft;
@@ -43,4 +44,4 @@ var DrapDrop = function(){
                 EventUtil.removeEvent( document,"mouseup",handleEvent);
             }
         }
-    }();
+    };
