@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IE:持久化数据</title>
+</head>
+<body>
+<div style="behavior:url(#default#userData)" id="dataStore"></div>
+<script src="userData.js"></script>
+<script>
+    userData.setData("dataStore",[{'f2er':'qingfeng'},{'ux':'f2er.net'}],'ooxx');
+    alert(userData.getData("dataStore","ooxx","ux"));
+    userData.removeData("dataStore","ooxx","ux");
+    alert(userData.getData("dataStore","ooxx","ux"));
+</script>
+</body>
+</html>
