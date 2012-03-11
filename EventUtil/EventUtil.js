@@ -31,3 +31,50 @@ EventUtil.getEvent = function(event){
 EventUtil.getTarget = function(event){
      return event.target || event.srcElement;
 };
+
+/*获取相关元素*/
+EventUtil.getRelatedTarget = function(event){
+    if( event.relatedTarget ){
+        return event.relatedTarget;
+    }else if( event.toElement ){ //mouseout
+        return event.toElement;
+    }else if( event.fromElement ){ //mouseover
+        return event.fromElement;
+    }
+};
+
+/*获取字符编码*/
+EventUtil.getCharCode = function(event){};
+
+/*阻止默认行为*/
+EventUtil.preventDefault = function(event){
+    if( event.preventDefault ){
+        event.preventDefault();
+    }else {
+        event.returnValue = false;
+    }
+};
+
+/*阻止事件冒泡*/
+EventUtil.stopPropagation = function(event){
+    if( event.stopPropagation ){
+        event.stopPropagation();
+    }else{
+        event.cancelBubble = true;
+    }
+};
+
+/*粘贴板取得数据*/
+EventUtil.getClipboardText = function(event){
+    var clipboardText = event.clipboardData || window.clipboardData;
+    return clipboardText.getData("text");
+};
+
+/*设置数据给粘贴板*/
+EventUtil.setClipboardText = function(event,value){
+    if( event.clipboardData ){
+        return event.clipboardData.setData("text/plain",value);
+    }else if( window.clipboardData ){
+        return window.clipboardData.setData("text",value);
+    }
+};
