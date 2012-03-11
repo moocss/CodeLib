@@ -1,6 +1,7 @@
 ﻿/* *
  * EventUtil
  * 2012-02-13
+ * update : 2012-03-11
 * */
 var EventUtil = EventUtil || {};
 
@@ -43,8 +44,36 @@ EventUtil.getRelatedTarget = function(event){
     }
 };
 
+/*鼠标按钮*/
+/* 0:主鼠标按钮，1:中间滚轴,2:次鼠标按钮*/
+EventUtil.getButton = function(event){
+    if( document.implementation.hasFeature("MouseEvents","2.0")){
+        return event.button;
+    }else{
+        switch( event.button ){
+            case 0:
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+                return 0;
+            case 2:
+            case 6:
+                return 2;
+            case 4:
+                return 1;
+        }
+    }
+};
+
 /*获取字符编码*/
-EventUtil.getCharCode = function(event){};
+EventUtil.getCharCode = function(event){
+    if( typeof event.charCode == "number" ){
+        return event.charCode;
+    }else{
+        return event.keyCode;
+    }
+};
 
 /*阻止默认行为*/
 EventUtil.preventDefault = function(event){
