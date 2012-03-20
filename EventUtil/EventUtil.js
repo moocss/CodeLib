@@ -107,3 +107,45 @@ EventUtil.setClipboardText = function(event,value){
         return window.clipboardData.setData("text",value);
     }
 };
+
+/*获取鼠标滚轮增量值*/
+EventUtil.getWheelDelta = function(event){
+    if( event.wheelDelta ){
+        return event.wheelDelta;
+    }else if( event.detail ){
+        return -( event.detail * 40 );
+    }
+};
+
+/* *
+ * Dom
+ * 2012-03-20
+* */
+var Dom = Dom || {};
+
+Dom.offset = function( element ){
+    var _obj = element;
+    var getOffsetLeft = (function(){
+        var _actualLeft = _obj.offsetLeft,
+            _currentParent = _obj.offsetParent;
+        while( _currentParent !== null ){
+            _actualLeft += _currentParent.offsetLeft;
+            _currentParent = _currentParent.offsetParent;
+        }
+        return _actualLeft;
+    })();
+    var getOffsetTop = (function(){
+        var _actualTop = _obj.offsetTop,
+            _currentParent = _obj.offsetParent;
+        while( _currentParent !== null ){
+            _actualTop += _currentParent.offsetTop;
+            _currentParent = _currentParent.offsetParent;
+        }
+    })();
+
+    var _offset = {
+        left : getOffsetLeft,
+        top : getOffsetTop
+    };
+    return _offset;
+};
