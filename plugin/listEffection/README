@@ -1,0 +1,20 @@
+/*
+  @ listEffection : 隔行换色、hover换色 (depend:javascript)
+  @ create        : 2012-04-26
+*/
+
+调用说明:
+listEffection({id : "js_textList",currentClass : "hover",tag : "tr"}).interlacedColor().switchColor();
+
+参数说明:
+id            :容器ID
+tr            : 标签
+currentClass : hover样式
+originClass  : {
+				  oddClass : "odd", //奇数行类名
+				  evenClass : "even" //偶数行类名
+				} //原始类名
+				
+接口说明:
+interlacedColor : 隔行换色方法
+switchColor : hover变换颜色方法
