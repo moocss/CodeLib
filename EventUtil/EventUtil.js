@@ -9,7 +9,9 @@ EventUtil.addEvent = function(obj,otype,fn){
 	if( obj.addEventListener ){
 		obj.addEventListener( otype,fn,false );
 	}else if( obj.attachEvent ){
-		obj.attachEvent('on'+otype,fn);
+		obj.attachEvent('on'+otype,function(){
+			fn.call(obj);
+		});
 	}else{
 		obj['on'+otype ] = fn;
 	}
