@@ -40,7 +40,9 @@
 			if( obj.addEventListener ){
 				obj.addEventListener(type,fn,false);
 			}else if( obj.attachEvent ){
-				obj.attachEvent("on"+type,fn);
+				obj.attachEvent("on"+type,function(){
+					fn.call(obj);
+				});
 			}else{
 				obj["on"+type]=fn;
 			}
@@ -61,16 +63,16 @@
 		switchColor : function(){
 			var self = this,
 			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
-			   _len = _list.length;
+			   _len = _list.length,
+			   _tmpClass = "";
 			for( var i = 0;i<_len;i++){
-				var _tmpClass = "";
 				self.on(_list[i],"mouseover",function(){
-					_tmpClass = this.className;
+					tmpClass = this.className;
 					this.className += " "+self._opt.currentClass;
-				})
+				});
 				self.on(_list[i],"mouseout",function(){
 					this.className = _tmpClass;
-				})
+				});
 			}
 			return self;
 		}
