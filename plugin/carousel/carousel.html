@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片轮播模块 carousel--jq版</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="css/carousel.css" rel="stylesheet" />
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+	<!--mod_carousel-->
+	<div class="mod_carousel" >
+            <div class="m_bd" id="J_carousel">
+                <ul class="clearfix m_ul" id="J_focus">
+                    <li><a href="http://my.4399.com/yx_hysj/"  title="火影世界" class=" img_loading" target="_blank" ><img  img_url="http://s4.img4399.com/1/swf/3cbf0800d2a59d792e693fee135cfe63.jpg?v=96"/></a></li>
+                        <li><a href="http://my.4399.com/yx_pm/"  title="飘渺西游" class=" img_loading" target="_blank" ><img  img_url="http://s4.img4399.com/1/swf/dd767ecea943fe9506b8ce189a2ad51e.jpg?v=96"/></a></li>
+                        <li><a href="http://my.4399.com/game_pkt/"  title="皮卡堂" class=" img_loading" target="_blank" ><img  img_url="http://s4.img4399.com/1/swf/3fff1e2e60269d805769c856e60e2632.jpg?v=96"/></a></li>
+                        <li><a href="http://my.4399.com/game_msdzls/"  title="美食大战老鼠" class=" img_loading" target="_blank"><img  img_url="http://s4.img4399.com/1/swf/30975a38bbfc70ccdd7e0039d13ea944.jpg?v=96"/></a></li>
+                        <li><a href="http://my.4399.com/game_hzdmx"  title="海贼大冒险" class="img_loading" target="_blank" ><img  img_url="http://s4.img4399.com/1/swf/5e776164c9008e35dc79c23bdaba1e16.jpg?v=96"/></a></li>
+                </ul>
+            </div>
+            <ol class="m_num clearfix" id="J_num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ol>
+        </div>
+	<!--/mod_carousel-->
+</div>
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jQuery-carousel.js" type="text/javascript"></script>
+<script type="text/javascript">
+mod_f2er.topBar('轮播','toolbar');
+mod_f2er.bottomBar('bottomBar');
+/*轮播*/
+$.setFocus({
+    focusWrap: "#J_carousel",
+    focusBox: "#J_focus",
+    focusPics: "#J_focus > li",
+	focusNum:"#J_num>li",
+    handlePrev: "",
+    handleNext: "",
+	disablePrev:"",
+	disableNext:"",
+    curClass: "current",
+    eventType: "click",
+    eventSpeed: "normal",
+    eventTime: 3000,
+    scrollDirection: 1,
+    curNum: 0,
+	arrowBool:true
+});
+</script>
+</body>
+</html>

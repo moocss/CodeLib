@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情封 焦点图</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="../../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
+<style>
+	.ox_box{ width:1000px; margin:60px auto; position:relative;}
+	.leftBtn,.rightBtn,.leftBtn_disable,.rightBtn_disable {position:absolute;top:120px;width:20px; text-align:center;line-height:50px;height:50px;display:block; border:1px solid #ddd;background:#f00;cursor:pointer;}
+	.leftBtn{ left:0;}
+	.leftBtn_disable{ background:#ccc;left:0;cursor:default;}
+	.rightBtn{right:0;}
+	.rightBtn_disable{ background:#ccc;right:0;cursor:default;}
+	.ui_tabslide{ position:relative;width:880px;height:300px;border:1px solid #ddd; margin:0 auto;}
+	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:880px;height:300px;overflow:hidden;}
+	.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
+	.ui_tabslide .img_list li{opacity:0;filter:alpha(opacity=0);z-index:10}
+	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;z-index:12;bottom:0;background:#000;width:880px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
+	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
+	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
+	.ui_tabslide li.current{ opacity :1}
+</style>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+  <span class="leftBtn" id="js_leftBtn">&lt;</span>
+  <span class="rightBtn" id="js_rightBtn">&gt;</span>
+  <!--ui_tabslide-->
+  <div class="ui_tabslide" id="j_tabslide">
+	<div class="ui_ts_bd">
+		<ul class="img_list clearfix" id="js_imgList">
+			<li><a target="_blank" href="http://piao.qq.com/acts/app/anhao.html"><img width="980" height="300" title="发暗号得Q币"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/QB93.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/dy/disney.html"><img width="980" height="300" title="异星战场"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ys93.jpg"></a></li>
+			<li><a target="_blank" href="http://s.qq.com/act/a20120302moive/index.htm"><img width="980" height="300" title="春娇与志明"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/cjyzm.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/jd/gotrip.html"><img width="980" height="300" title="会员专享特权" src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ls93.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/star/leehom2012.html"><img width="980" height="300" title="王力宏巡回演唱会"  src="http://img1.gtimg.com/3/363/36345/3634535_1200x1000_0.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/yanchu/detail/35/detail_13235_101.html"><img width="980" height="300" title="丁当2012上海演唱会" l src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/dd980x300.jpg"></a></li>
+		</ul>
+	</div>
+	<div class="ui_num">
+		<ul class="clearfix" id="js_num">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+  </div>
+  <!--/ui_tabslide-->
+
+</div>
+  <!--demo_resource-->
+    <div class="demo_resource wrapper">
+        <p>参数说明:</p>
+        <pre class="DlHighlight"><code class="xml">slideContainer : 容器ID
+imgList             : 子容器ID
+numList            : 焦点容器ID //默认为空
+slideTarget       : 焦点元素
+eventType        : 事件类型
+currentClass     : 当前元素样式
+Btn                   : 左右方向键相关对象
+autoPlay          : 是否自动播放相关对象
+play                 : 是否自动轮播   //true:自动,false:不动
+intervalTime     : 自动轮播间隔时间
+num                 : 默认开启</code></pre>
+	<p>调用说明:</p>
+	<pre class="DlHighlight"><code class="xml">FocusCarousel();</code></pre>                  
+    </div>
+    <!--/demo_resource-->
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/carousel.js" type="text/javascript"></script>
+<script src="../../static/js/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+mod_f2er.topBar('焦点轮播图--Javascript','toolbar');
+mod_f2er.bottomBar('bottomBar');
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+FocusCarousel({slideContainer : "j_tabslide"});
+</script>
+</body>
+</html>
