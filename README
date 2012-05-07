@@ -2,9 +2,11 @@
  * To: CodeLib
  * author: f2er(情封)
  * Time: 12-02-05
+ * update : 12-05-08
 */
 
 更新记录:
+	5.新增 [snippets]点击倒计时写法
 	4.新增 隔行换色、hover换色 (listEffection) 
 	3.新增 EventUtil 2012-02-13
 	2.新增 bind 2012-02-13
