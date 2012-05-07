@@ -34,6 +34,31 @@
 		getTarget : function(event){
 			var _e = event || window.event;
 			return _e.target || _e.srcElement;
+		},
+		clearBlank : function(obj){
+			for( var i = 0,len = obj.children.length;i<len;i++){
+				if( obj.children[i].nodeType != 1){
+					obj.removeChild(obj.children[i]);
+				}
+			}
+			return obj;
+		},
+		getCssProperty : function(element,attr){
+			if(element.style[attr]){
+				//若样式存在于html中,优先获取
+				return element.style[attr];
+			}else if(element.currentStyle){
+				//IE下获取CSS属性最终样式(同于CSS优先级)
+				return element.currentStyle[attr];
+			}else if(document.defaultView && document.defaultView.getComputedStyle){
+				//W3C标准方法获取CSS属性最终样式(同于CSS优先级)
+				//注意,此法属性原格式(text-align)获取的,故要转换一下
+				attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
+				//获取样式对象并获取属性值
+				return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
+			}else{
+				return null;
+			}
 		}
 	}
 	
@@ -42,11 +67,17 @@
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "",//js_num
+						 numList : "js_num",//js_num
 					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
+						   speed : 100, //速度
+						   step  : 10, //步长
+					      effect : {
+									 efficacy : "slide", //transparent:透明  slide:滑动
+									direction : 1 // 1:左右  0：上下
+								},
 							 /*Btn : null,*/
 							 Btn : {
 									left : "js_leftBtn",
@@ -58,7 +89,7 @@
 						autoPlay : {
 									play : false,
 									intervalTime : 2000
-						}
+								}
 							
 				};
 		
@@ -66,6 +97,7 @@
 		this._timer = null;
 		this._autoTimer = null;
 		this.LENGTH = 0; //统计子个数
+		this.WIDTH = this.HEIGHT = 0; //宽度，高度
 		if( !(this instanceof FocusCarousel)){
 			return new FocusCarousel(ctg);
 		}
@@ -109,11 +141,11 @@
 			obj.style.opacity = opacityValue/100;
 			obj.style.filter = "alpha(opacity="+opacityValue+")";
 		},
-		animateShow : function(obj){
+		opacityShow : function(obj){
 			var that = this,
 				_opacity = 0;
 			function showImg(){
-				_opacity += 10;
+				_opacity += that.setting.step;
 				that.setOpacity(obj,_opacity);
 				if(_opacity >= 100){
 					that.clearTimer( that._timer );
@@ -121,7 +153,38 @@
 				}
 			}
 			that.clearTimer( that._timer );
-			that._timer = setInterval(showImg,100);
+			that._timer = setInterval(showImg,that.setting.speed);
+		},
+		setSlide : function(obj,n,arg){
+			var that = this;
+			if( that.setting.effect.direction == 1){
+				obj.style.marginLeft = ( -arg * n )+"px";
+			}else{
+				obj.style.marginTop = ( -arg * n )+"px";
+			}
+		},
+		slideShow : function(obj,n){
+			var that = this,
+				_width = _height = 0;
+			function animate(){
+				if( that.setting.effect.direction == 1 ){
+					_width += that.setting.step;
+					that.setSlide(obj,n,_width)
+					if( _width >= that.WIDTH ){
+						that.clearTimer( that._timer );
+						_width = 0;
+					}
+				}else if( that.setting.effect.direction == 0 ){
+					_height += that.setting.step;
+					that.setSlide(obj,n,_height)
+					if( _height >= that.HEIGHT ){
+						that.clearTimer( that._timer );
+						_height = 0;
+					}
+				}
+			}
+			that.clearTimer( that._timer );
+			that._timer = setInterval(animate,that.setting.speed);
 		},
 		BtnState : function(){
 			var that = this,
@@ -150,7 +213,8 @@
 		},
 		showSlide : function(n){
 			var that = this,
-				_imgList = that.imgList();
+				_imgList = that.imgList(),
+				_imgContainer = YJ.Q( that.setting.imgList );
 				
 			that.checkType( YJ.Q( that.setting.numList ),function(){
 				var _numList = that.numList();
@@ -158,16 +222,22 @@
 					_numList[i].className = (i == n ) ? that.setting.currentClass : "";
 				}
 			});
-			
-			for( var j = 0;j<that.LENGTH;j++){
-				var _obj = _imgList[j];
-				if( j == n ){
-					that.animateShow(_obj);
-					_obj.style.zIndex = 11;
-				}else{
-					that.setOpacity(_obj,0);
-					_obj.style.zIndex = 10;
+			//透明
+			if( that.setting.effect.efficacy == "transparent"){
+				for( var j = 0;j<that.LENGTH;j++){
+					var _obj = _imgList[j];
+					if( j == n ){
+						that.opacityShow(_obj);
+						_obj.style.zIndex = 11;
+					}else{
+						that.setOpacity(_obj,0);
+						_obj.style.zIndex = 10;
+					}
 				}
+			}
+			//左右、上下
+			if( that.setting.effect.efficacy == "slide"){
+				that.slideShow(_imgContainer,n);
 			}
 			that.BtnState();
 		},
@@ -185,15 +255,20 @@
 		},
 		Initialization : function(i){
 			var that = this,
-				_imgList = that.imgList();
-			that.LENGTH = YJ.Q(that.setting.imgList).children.length;
+				_imgList = that.imgList(),
+				_imgContainer = YJ.Q( that.setting.imgList );
+			that.LENGTH = _imgContainer.children.length;
 			
 			that.checkType( YJ.Q(that.setting.numList),function(){
 				var _numList = that.numList();
 				_numList[i].className = that.setting.currentClass;
 			})
-			
-			that.setOpacity(_imgList[i],100);
+			if(that.setting.effect.efficacy == "transparent"){
+				that.setOpacity(_imgList[i],100);
+			}else if(that.setting.effect.efficacy == "slide"){
+				var _arg = that.setting.effect.direction ? that.WIDTH : that.HEIGHT;
+				that.setSlide(_imgContainer,i,_arg);
+			}
 			that.BtnState();
 		},
 		rightEvent : function(lobj,robj){
@@ -218,7 +293,10 @@
 		},
 		init : function(){
 			var that = this,
-				_slideContainer = YJ.Q(that.setting.slideContainer);
+				_slideContainer = YJ.Q(that.setting.slideContainer),
+				_imgContainer = YJ.Q( that.setting.imgList );
+				
+			YJ.clearBlank( _imgContainer );
 			that.Initialization( that.setting.num );
 			
 			that.checkType(that.setting.Btn,function(){
@@ -255,6 +333,17 @@
 					that.showSlide(that.setting.num);
 				});
 			});
+			
+			if( that.setting.effect.efficacy == "slide"){
+				var _firstChild = _imgContainer.children[0];
+				if( that.setting.effect.direction == 1){
+					that.WIDTH = parseInt( YJ.getCssProperty(_firstChild,'width'));
+					_imgContainer.style.width = that.WIDTH * that.LENGTH +"px";
+				}else{
+					that.HEIGHT = parseInt( YJ.getCssProperty(_firstChild,'height'));
+					_imgContainer.style.height = that.HEIGHT * that.LENGTH +"px";
+				}
+			}
 			that.showSlide(that.setting.num);
 		}
 	}

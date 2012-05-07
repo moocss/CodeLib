@@ -14,8 +14,12 @@
 	.rightBtn_disable{ background:#ccc;right:0;cursor:default;}
 	.ui_tabslide{ position:relative;width:880px;height:300px;border:1px solid #ddd; margin:0 auto;}
 	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:880px;height:300px;overflow:hidden;}
-	.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
-	.ui_tabslide .img_list li{opacity:0;filter:alpha(opacity=0);z-index:10}
+	/*焦点*/
+	/*.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
+	.ui_tabslide .img_list li{opacity:0;filter:alpha(opacity=0);z-index:10}*/
+	
+	/*滑动*/
+	.ui_tabslide .img_list li{ float:left; width:880px;height:300px;}
 	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;z-index:12;bottom:0;background:#000;width:880px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
 	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
 	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
@@ -82,7 +86,7 @@ mod_f2er.topBar('焦点轮播图--Javascript','toolbar');
 mod_f2er.bottomBar('bottomBar');
 hljs.tabReplace = ' ';
 hljs.initHighlightingOnLoad();
-FocusCarousel({slideContainer : "j_tabslide"});
+FocusCarousel({slideContainer : "j_tabslide",speed : 5});
 </script>
 </body>
 </html>
