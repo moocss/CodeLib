@@ -20,17 +20,37 @@
 		var _timer = null;
 		var _parentDemo = document.getElementById('demo');
 		function Countdown(){
-			var _t = 10;
+		
+		   /*
+		    * 解法一:利用setInterval
+		   */
+			/*var _t = 10;
 			_timer = setInterval(function(){
 				_t--;
 				_parentDemo.innerHTML = "倒计时"+_t +"秒";
 				if( _t<=0 ){
 					clearInterval(_timer);
 					_timer = null;
-					_parentDemo.innerHTML = "";
-					_parentDemo.appendChild(_cloneNode);
+					//_parentDemo.innerHTML = "";
+					//_parentDemo.appendChild(_cloneNode);
+					_parentDemo.replaceChild(_cloneNode,_parentDemo.firstChild);
 				}
-			},1000);
+			},1000);*/
+			
+			/*
+		    * 解法二:利用setTimeout
+		   */
+			var _t = 10;
+			function countTime(){		
+				_t--;
+				if( _t<=0 ){
+					_parentDemo.replaceChild(_cloneNode,_parentDemo.firstChild);
+				}else{
+					_parentDemo.innerHTML = "倒计时"+_t +"秒";
+					setTimeout(arguments.callee,1000);
+				}
+			}
+			countTime();
 		}
 		function Alert(){
 			var _subDemo = document.getElementById('sub_demo');
