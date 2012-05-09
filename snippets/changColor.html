@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>【animateColor】</title>
+		<meta charset="utf-8"/>
+		<style>
+		*{ margin:0; padding:0;}
+		#text{ font-size:14px;color:#f00}
+		</style>
+	</head>
+	<body>
+		<div id="text">看我变颜色</div>
+		<script>
+			(function(win,undefined){
+			
+				function animateColor(ele,ColorArr){
+					var _i = 0;
+					function changeColor(){
+						var _fun = arguments.callee;
+						setTimeout(function(){
+							ele.style.color = ColorArr[++_i >= ColorArr.length ? _i=0 : _i];
+							_fun();
+						},1000);
+					}
+					changeColor();
+				}
+				win.animateColor = animateColor ;
+			})(window);
+			
+			var ColorArr = ["#00f","#7d7215","#e4620c" ],
+			    _title = document.getElementById("text");
+			animateColor(_title,ColorArr);
+		</script>
+	</body>
+</html>
