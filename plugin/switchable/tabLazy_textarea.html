@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情封 tab切换+延迟加载(通过textarea)</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="../../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
+<link href="css/tabLazy.css" rel="stylesheet" />
+<style>
+	.ox_box{ width:1000px;}
+</style>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+  	<!--ui_tab-->
+	<ul id="tab_type" class="clearfix tab_type">
+		<li data-widget = "tab-item"><a title="社区游戏" href="">社区游戏</a></li>
+		<li data-widget = "tab-item"><a title="动漫联盟" href="">动漫联盟</a></li>
+		<li data-widget = "tab-item"><a title="4399中心广场" href="">4399中心广场</a></li>
+		<li data-widget = "tab-item"><a title="儿童网游" href="">儿童网游</a></li>
+		<li data-widget = "tab-item"><a title="网页游戏" href="">网页游戏</a></li>
+		<li data-widget = "tab-item"><a title="单机游戏" href="">单机游戏</a></li>
+		<li data-widget = "tab-item"><a title="大型网游" href="">大型网游</a></li>
+    </ul>
+    <!--/ui_tab-->
+    <div id="tab_game" class="bd">
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-1.html" title="4399开心农场大家谈" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/1.jpg" alt="4399开心农场大家谈" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-1.html" title="4399开心农场大家谈"&gt;4399开心农场大家谈&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;568&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1564&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;40&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;90&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-79699.html" title="美食大战老鼠" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/79699.jpg" alt="美食大战老鼠" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-79699.html" title="美食大战老鼠"&gt;美食大战老鼠&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;326&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1341&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;90&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;80&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81132.html" title="4399皮卡堂过家家" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81132.gif" alt="4399皮卡堂过家家" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81132.html" title="4399皮卡堂过家家"&gt;4399皮卡堂过家家&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;265&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1052&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;70436&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-68629.html" title="泡泡鱼" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/68629.jpg" alt="泡泡鱼" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-68629.html" title="泡泡鱼"&gt;泡泡鱼&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;262&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;837&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;60&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;90&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-9853.html" title="开心宝贝协会" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/9853.jpg" alt="开心宝贝协会" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-9853.html" title="开心宝贝协会"&gt;开心宝贝协会&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;89&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;597&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;80&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;400&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81168.html" title="帝国风云" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81168.jpg" alt="帝国风云" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81168.html" title="帝国风云"&gt;帝国风云&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;72&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;186&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;32713&lt;/span&gt;回帖:&lt;span&gt;9253&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81176.html" title="欢乐斗地主" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81176.jpg" alt="欢乐斗地主" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81176.html" title="欢乐斗地主"&gt;欢乐斗地主&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;69&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;148&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;13089&lt;/span&gt;回帖:&lt;span&gt;7208&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-80775.html" title="飘渺西游" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/80775.gif" alt="飘渺西游" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-80775.html" title="飘渺西游"&gt;飘渺西游&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;62&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;127&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;43980&lt;/span&gt;回帖:&lt;span&gt;16230&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-79877.html" title="新守卫家园" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/79877.gif" alt="新守卫家园" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-79877.html" title="新守卫家园"&gt;新守卫家园&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;37&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;90&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;67066&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81115.html" title="4399动漫&mdash;官方论坛" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81115.jpg" alt="4399动漫&mdash;官方论坛" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81115.html" title="4399动漫&mdash;官方论坛"&gt;4399动漫&mdash;官方论坛&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;109&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;299&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30579&lt;/span&gt;回帖:&lt;span&gt;11345&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81185.html" title="童言无忌" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81185.gif" alt="童言无忌" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81185.html" title="童言无忌"&gt;童言无忌&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;15&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;81&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;14045&lt;/span&gt;回帖:&lt;span&gt;6756&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81120.html" title="大海贼时代&mdash;4399动漫官方论坛" class="img_game"&gt;&lt;img src="http://p.img4399.com/201107/11/275733014_1310354594l41W.jpg" alt="大海贼时代&mdash;4399动漫官方论坛" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81120.html" title="大海贼时代&mdash;4399动漫官方论坛"&gt;大海贼时代&mdash;4399动漫官方论坛&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;16&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;21&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;4940&lt;/span&gt;回帖:&lt;span&gt;2704&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81119.html" title="死神静灵庭&mdash;4399动漫官方论坛" class="img_game"&gt;&lt;img src="http://p.img4399.com/201107/5/275697426_1309838206DyLO.jpg" alt="死神静灵庭&mdash;4399动漫官方论坛" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81119.html" title="死神静灵庭&mdash;4399动漫官方论坛"&gt;死神静灵庭&mdash;4399动漫官方论坛&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;3&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;12&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;1063&lt;/span&gt;回帖:&lt;span&gt;544&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81122.html" title="火影忍者&mdash;4399动漫官方论坛" class="img_game"&gt;&lt;img src="http://p.img4399.com/201107/7/215812062_1310028222rGa2.jpg.thumb.jpg" alt="火影忍者&mdash;4399动漫官方论坛" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81122.html" title="火影忍者&mdash;4399动漫官方论坛"&gt;火影忍者&mdash;4399动漫官方论坛&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;7&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;2866&lt;/span&gt;回帖:&lt;span&gt;703&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81121.html" title="喜羊羊与灰太狼&mdash;4399动漫官方论坛" class="img_game"&gt;&lt;img src="http://p.img4399.com/201107/8/280485807_1310119216IprB.jpg" alt="喜羊羊与灰太狼&mdash;4399动漫官方论坛" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81121.html" title="喜羊羊与灰太狼&mdash;4399动漫官方论坛"&gt;喜羊羊与灰太狼&mdash;4399动漫官方论坛&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;600&lt;/span&gt;回帖:&lt;span&gt;133&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81186.html" title="父母杂谈" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81186.gif" alt="父母杂谈" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81186.html" title="父母杂谈"&gt;父母杂谈&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;291&lt;/span&gt;回帖:&lt;span&gt;78&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-3.html" title="4399大灌水" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/3.jpg" alt="4399大灌水" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-3.html" title="4399大灌水"&gt;4399大灌水&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;295&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;729&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;35194&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81171.html" title="4399作品中心" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81171.jpg" alt="4399作品中心" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81171.html" title="4399作品中心"&gt;4399作品中心&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;112&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;570&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;87379&lt;/span&gt;回帖:&lt;span&gt;34635&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81101.html" title="每日赚积分赢勋章" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81101.jpg" alt="每日赚积分赢勋章" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81101.html" title="每日赚积分赢勋章"&gt;每日赚积分赢勋章&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;41&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;141&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;8261&lt;/span&gt;回帖:&lt;span&gt;7567&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81116.html" title="4399官方群组" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81116.jpg" alt="4399官方群组" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81116.html" title="4399官方群组"&gt;4399官方群组&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;24&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;123&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;47325&lt;/span&gt;回帖:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81201.html" title="4399星座频道" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums_new/mtag/icon/81201.jpg" alt="4399星座频道" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81201.html" title="4399星座频道"&gt;4399星座频道&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;4&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;10&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;256&lt;/span&gt;回帖:&lt;span&gt;256&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81061.html" title="4399群组活动中心" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81061.jpg" alt="4399群组活动中心" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81061.html" title="4399群组活动中心"&gt;4399群组活动中心&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;1&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;5&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;20444&lt;/span&gt;回帖:&lt;span&gt;8179&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-78506.html" title="用户中心安全帮助" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/78506.jpg" alt="用户中心安全帮助" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-78506.html" title="用户中心安全帮助"&gt;用户中心安全帮助&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;331&lt;/span&gt;回帖:&lt;span&gt;139&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-54525.html" title="4399积分游戏" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/54525.gif" alt="4399积分游戏" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-54525.html" title="4399积分游戏"&gt;4399积分游戏&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;1440&lt;/span&gt;回帖:&lt;span&gt;2948&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81089.html" title="4399商城" class="img_game"&gt;&lt;img src="http://p.img4399.com/201106/16/267874074_1308195352B1QF.jpg" alt="4399商城" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81089.html" title="4399商城"&gt;4399商城&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;0&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;0&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;230&lt;/span&gt;回帖:&lt;span&gt;191&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-65356.html" title="4399奥比岛玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/65356.jpg" alt="4399奥比岛玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-65356.html" title="4399奥比岛玩家交流区"&gt;4399奥比岛玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;781&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;4000&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;60&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-47897.html" title="4399赛尔号" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/47897.jpg" alt="4399赛尔号" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-47897.html" title="4399赛尔号"&gt;4399赛尔号&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;513&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;3471&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;140&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;120&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-79936.html" title="卡布西游官方群组" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/79936.jpg" alt="卡布西游官方群组" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-79936.html" title="卡布西游官方群组"&gt;卡布西游官方群组&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;374&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1561&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;40&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-65814.html" title="4399小花仙玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/65814.jpg" alt="4399小花仙玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-65814.html" title="4399小花仙玩家交流区"&gt;4399小花仙玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;169&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1274&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;91991&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-70504.html" title="洛克王国~快乐洛克" class="img_game"&gt;&lt;img src="http://photo.img4399.com/201007/28/108979708_1280289378jLnY.gif" alt="洛克王国~快乐洛克" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-70504.html" title="洛克王国~快乐洛克"&gt;洛克王国~快乐洛克&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;286&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1266&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;100&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;40&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-79407.html" title="4399赛尔号2" class="img_game"&gt;&lt;img src="http://photo.img4399.com/201108/11/62945954_1313045217gyj5.jpg" alt="4399赛尔号2" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-79407.html" title="4399赛尔号2"&gt;4399赛尔号2&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;152&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1221&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;50&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81118.html" title="4399奥雅之光玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81118.jpg" alt="4399奥雅之光玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81118.html" title="4399奥雅之光玩家交流区"&gt;4399奥雅之光玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;174&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;1189&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;50&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-73820.html" title="4399奥拉星玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/73820.jpg" alt="4399奥拉星玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-73820.html" title="4399奥拉星玩家交流区"&gt;4399奥拉星玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;137&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;990&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;50&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81191.html" title="4399西普大陆官方群组" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81191.jpg" alt="4399西普大陆官方群组" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81191.html" title="4399西普大陆官方群组"&gt;4399西普大陆官方群组&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;49&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;557&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;33789&lt;/span&gt;回帖:&lt;span&gt;31183&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81188.html" title="4399火影世界玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81188.gif" alt="4399火影世界玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81188.html" title="4399火影世界玩家交流区"&gt;4399火影世界玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;111&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;247&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;9303&lt;/span&gt;回帖:&lt;span&gt;7035&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81202.html" title="虫虫特攻队" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums_new/mtag/icon/81202.gif" alt="虫虫特攻队" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81202.html" title="虫虫特攻队"&gt;虫虫特攻队&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;36&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;201&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;1520&lt;/span&gt;回帖:&lt;span&gt;1520&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-78097.html" title="三国杀" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/78097.gif" alt="三国杀" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-78097.html" title="三国杀"&gt;三国杀&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;10&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;56&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;12196&lt;/span&gt;回帖:&lt;span&gt;7667&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81117.html" title="海贼大冒险" class="img_game"&gt;&lt;img src="http://p.img4399.com/201107/3/59637201_13096955867i3b.gif" alt="海贼大冒险" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81117.html" title="海贼大冒险"&gt;海贼大冒险&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;28&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;38&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;3948&lt;/span&gt;回帖:&lt;span&gt;2107&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81180.html" title="泰坦之王" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81180.gif" alt="泰坦之王" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81180.html" title="泰坦之王"&gt;泰坦之王&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;13&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;33&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;8449&lt;/span&gt;回帖:&lt;span&gt;1915&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81204.html" title="4399神魔斗" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums_new/mtag/icon/81204.gif" alt="4399神魔斗" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81204.html" title="4399神魔斗"&gt;4399神魔斗&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;4&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;25&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30&lt;/span&gt;回帖:&lt;span&gt;30&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81194.html" title="长生战道" class="img_game"&gt;&lt;img src="image/nologo.jpg" alt="长生战道" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81194.html" title="长生战道"&gt;长生战道&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;25&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;20&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;1532&lt;/span&gt;回帖:&lt;span&gt;1503&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-80823.html" title="神魔遮天" class="img_game"&gt;&lt;img src="http://img.my.5054399.com/apps/154_big.gif" alt="神魔遮天" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-80823.html" title="神魔遮天"&gt;神魔遮天&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;11&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;20&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;3167&lt;/span&gt;回帖:&lt;span&gt;1329&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81192.html" title="梦幻三国" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81192.jpg" alt="梦幻三国" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81192.html" title="梦幻三国"&gt;梦幻三国&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;3&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;8&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;2748&lt;/span&gt;回帖:&lt;span&gt;1597&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-80615.html" title="造梦西游" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/80615.jpg" alt="造梦西游" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-80615.html" title="造梦西游"&gt;造梦西游&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;5201&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;10544&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;240&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;90&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81127.html" title="勇者之路3：勇士的信仰" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81127.jpg" alt="勇者之路3：勇士的信仰" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81127.html" title="勇者之路3：勇士的信仰"&gt;勇者之路3：勇士的信仰&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;678&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;2071&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;91765&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-37169.html" title="植物大战僵尸" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/37169.jpg" alt="植物大战僵尸" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-37169.html" title="植物大战僵尸"&gt;植物大战僵尸&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;30&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;365&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;20&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81200.html" title="封神太子" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums_new/mtag/icon/81200.jpg" alt="封神太子" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81200.html" title="封神太子"&gt;封神太子&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;66&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;270&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;10522&lt;/span&gt;回帖:&lt;span&gt;10522&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81166.html" title="4399三国小镇玩家交流区" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81166.jpg" alt="4399三国小镇玩家交流区" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81166.html" title="4399三国小镇玩家交流区"&gt;4399三国小镇玩家交流区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;67&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;268&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;30&lt;em class="g_unit"&gt;万&lt;/em&gt;&lt;/span&gt;回帖:&lt;span&gt;55719&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81100.html" title="皇后成长计划" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81100.jpg" alt="皇后成长计划" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81100.html" title="皇后成长计划"&gt;皇后成长计划&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;9&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;64&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;31130&lt;/span&gt;回帖:&lt;span&gt;14229&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81148.html" title="国王的勇士" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81148.jpg" alt="国王的勇士" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81148.html" title="国王的勇士"&gt;国王的勇士&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;31&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;33&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;92367&lt;/span&gt;回帖:&lt;span&gt;4468&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-80445.html" title="愤怒的小鸟" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/80445.jpg" alt="愤怒的小鸟" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-80445.html" title="愤怒的小鸟"&gt;愤怒的小鸟&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;2&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;29&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;5773&lt;/span&gt;回帖:&lt;span&gt;3233&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81157.html" title="超级勇士" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81157.jpg" alt="超级勇士" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81157.html" title="超级勇士"&gt;超级勇士&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;3&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;11&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;6189&lt;/span&gt;回帖:&lt;span&gt;490&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+<div class="clearfix m_imglist" data-widget = "tab-content">
+<textarea>&lt;ul&gt;&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81164.html" title="超神传" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81164.jpg" alt="超神传" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81164.html" title="超神传"&gt;超神传&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;94&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;4081&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;14968&lt;/span&gt;回帖:&lt;span&gt;7998&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-78456.html" title="蜀山神话" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/78456.jpg" alt="蜀山神话" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-78456.html" title="蜀山神话"&gt;蜀山神话&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;9&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;9&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;4282&lt;/span&gt;回帖:&lt;span&gt;807&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81199.html" title="沃尔学院" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums_new/mtag/icon/81199.jpg" alt="沃尔学院" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81199.html" title="沃尔学院"&gt;沃尔学院&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;2&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;7&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;249&lt;/span&gt;回帖:&lt;span&gt;249&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="forums-mtag-tagid-81150.html" title="明朝演义" class="img_game"&gt;&lt;img src="http://s4.img4399.com/forums/mtag/icon/81150.jpg" alt="明朝演义" /&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;a href="forums-mtag-tagid-81150.html" title="明朝演义"&gt;明朝演义&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;今日:&lt;span class="cff6600"&gt;3&lt;/span&gt;昨日:&lt;span class="cff6600"&gt;7&lt;/span&gt;&lt;/p&gt;
+&lt;p class="m_tz"&gt;话题:&lt;span&gt;3190&lt;/span&gt;回帖:&lt;span&gt;121&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ul&gt;
+</textarea>
+</div>
+</div>
+</div>
+<!--demo_resource-->
+<div class="demo_resource wrapper">
+	<p>调用说明:</p>
+    <pre class="DlHighlight"><code class="xml">Switchable({tabid:"tab_type",bid:"tab_game",eventType:"mouseover"}).trigger(1);</code></pre>
+		<p>参数说明:</p>
+        <pre class="DlHighlight"><code class="xml">tabid:"tab_type",/*tab区ID*/
+htag:"tab-item", /*tab区标识*/
+currentClass:"cur",/*当前选中样式*/
+cProp : "data-widget", /*自定义属性名*/
+bid:"tab_ooxx", /*内容区ID*/
+btag:"tab-content", /*内容区标识*/
+dPro:"data-loaded",/*是否加载过*/
+eventType : "click",/*事件类型*/
+tabType : 1, // 0:普通切换 1:延迟加载
+callback : function(){} /*加载完成后的回调函数*/
+</code></pre>    
+</div>
+<!--/demo_resource-->
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/Switchable.js" type="text/javascript"></script>
+<script src="../../static/js/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+mod_f2er.topBar('tab、内容延迟','toolbar');
+mod_f2er.bottomBar('bottomBar');
+Switchable({tabid:"tab_type",bid:"tab_game",eventType:"mouseover"}).trigger(1);
+</script>
+</body>
+</html>
