@@ -3,15 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>情封 普通切换模块</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="css/tabLazy.css" rel="stylesheet" />
+<link href="../../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
 <style>
-	*{ margin:0;padding:0}
 	.ox_box{ width:1000px;}
 </style>
-<link href="css/tabLazy.css" rel="stylesheet" />
-
 </head>
 <body>
-
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
 <div class="ox_box">
   	<!--ui_tab-->
 	<ul id="tab_ooxx" class="clearfix tab_type">
@@ -48,8 +50,33 @@
 		</div>
 	</div>
 </div>
+<!--demo_resource-->
+<div class="demo_resource wrapper">
+	<p>调用说明:</p>
+    <pre class="DlHighlight"><code class="xml">Switchable({tabid:"tab_ooxx",bid:"tab_game",eventType:"mouseover",tabType:"0"}).trigger(2);</code></pre>
+		<p>参数说明:</p>
+        <pre class="DlHighlight"><code class="xml">tabid:"tab_type",/*tab区ID*/
+htag:"tab-item", /*tab区标识*/
+currentClass:"cur",/*当前选中样式*/
+cProp : "data-widget", /*自定义属性名*/
+bid:"tab_ooxx", /*内容区ID*/
+btag:"tab-content", /*内容区标识*/
+dPro:"data-loaded",/*是否加载过*/
+eventType : "click",/*事件类型*/
+tabType : 1, // 0:普通切换 1:延迟加载
+callback : function(){} /*加载完成后的回调函数*/
+</code></pre>    
+</div>
+<!--/demo_resource-->
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
 <script src="js/Switchable.js" type="text/javascript"></script>
+<script src="../../static/js/highlight/highlight.pack.js"></script>
 <script type="text/javascript">
+mod_f2er.topBar('普通tab切换','toolbar');
+mod_f2er.bottomBar('bottomBar');
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
 Switchable({tabid:"tab_ooxx",bid:"tab_game",eventType:"mouseover",tabType:"0"}).trigger(2);
 </script>
 </body>

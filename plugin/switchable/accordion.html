@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情封 手风琴效果</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="../../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
+<link href="css/accordion.css" rel="stylesheet" />
+
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+  <!--mod_tabSlide-->
+	<div class="mod_tabSlide" id="js_tabSlide">
+		<div class="role_box">
+			<dl class="role_xl">
+				<dt>仙灵</dt>
+				<dd>仙灵秉天地灵气而生，拥有得天独厚的资质，可以轻松驾驭各种法术，看似无力的法杖实则威力惊人。</dd>
+			</dl>
+		</div>
+		<div class="role_box">
+			<dl class="role_ms">
+				<dt>魔神</dt>
+				<dd>修魔者，以杀证道！集万千业力于一身，化戾气为自身战力，手中魔刀神挡杀神佛挡杀佛。</dd>
+			</dl>
+		</div>
+		<div class="role_box">
+			<dl class="role_dz">
+				<dt>道尊</dt>
+				<dd>修道者，清静无为，炼丹悟道，追求天人合一。手中三尺青锋可斩尽世间一切妖魔鬼怪。</dd>
+			</dl>
+		</div>
+		<div class="role_box">
+			<dl class="role_yj">
+				<dt>妖精</dt>
+				<dd>妖精千娇百媚颠倒众生，但修成人型的艰辛又有谁知，在千年的修行中，手中的圆环早已沾满鲜血。</dd>
+			</dl>
+		</div>
+	</div>
+	<!--mod_tabSlide-->
+	<!--demo_resource-->
+    <div class="demo_resource wrapper">
+        <p>参数说明:</p>
+        <pre class="DlHighlight"><code class="xml">id           :容器ID
+eventTypeL   : 事件触发类型
+currentClass : 当前选中的类名
+nornalClass  : 默认类名
+effection    : {
+				 effect : 效果 //slide : 展开,transparent : 透明度,
+				 start  : 起始值,
+				 end    : 终止值
+				 step   : 步骤
+			   }
+trigger方法 : 设置默认开启数</code></pre>
+                    
+    </div>
+    <!--/demo_resource-->
+</div>
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/SwitchAccordion.js" type="text/javascript"></script>
+<script src="../../static/js/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+mod_f2er.topBar('手风琴效果','toolbar');
+mod_f2er.bottomBar('bottomBar');
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+SwitchAccordion({ id:"js_tabSlide",
+		   eventType   :"click",
+		   currentClass:"on",
+		   nornalClass :"role_box",
+		   effection   : {
+		   					effect : "transparent",
+		   					start  : 0,
+		   					end    : 100,
+		   					step   : 10
+		   				}
+		}).trigger(0);
+</script>
+</body>
+</html>

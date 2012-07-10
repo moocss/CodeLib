@@ -54,7 +54,7 @@
 		}
 	}
 	
-	/*TabDelayed*/
+	/*Switchable*/
 	function Switchable(ctg){
 		this.setting={
 			tabid:"tab_type",
@@ -66,7 +66,7 @@
 			dPro:"data-loaded",/*是否加载过*/
 			eventType : "click",
 			tabType : 1, // 0:普通切换 1:延迟加载
-			callback : function(i){}
+			callback : false
 		};
 		this.GLOBAL = {
 			tId : null,
@@ -91,7 +91,7 @@
 			_div.className = "sw_container";
 			_div.innerHTML = _textarea.value;
 			_tabContent.replaceChild(_div,_textarea);
-			QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
+			//QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
 		},
 		getIndex:function(node,obj){
 			var that=this;
@@ -119,6 +119,7 @@
 			if( that.option.tabType == 1){
 				that.checkLoad(that.GLOBAL.tId[i],i);
 			}
+			QF.IsFunction( that.option.callback ) && (that.option.callback)(i);
 			return that;
 		},
 		doEvent : function(){
@@ -142,9 +143,7 @@
             	}
             	_index = that.getIndex(_element,that.GLOBAL.tId);
             	that.trigger(_index);
-            	if( that.option.tabType == 1){
-					that.checkLoad(_element,_index);
-				}
+				
 				QF.preventDefault(_ev);
             });
 

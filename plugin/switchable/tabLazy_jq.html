@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情封 tab切换+延迟加载+滚动</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="css/tabLazy.css" rel="stylesheet" />
+<style>
+	.ox_box{ width:1000px;}
+</style>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+  <!--mod_adaptive-->
+	<div class="mod_adaptive m_tab">
+		<!--hd-->
+		<div class="hd">
+			<div class="hd_t">
+				<ul class="clearfix tab_pic" id="tab_ul">
+					<li tflag="false"><a href="#" title="宠物大全">宠物大全</a></li>
+					<li tflag="false"><a href="#" title="装备展示">装备展示</a></li>
+					<li tflag="false"><a href="#" title="灵兽坐骑">灵兽坐骑</a></li>
+				</ul>
+			</div>
+			<span class="lt"></span>
+			<span class="rt"></span>
+		</div>
+					<!--/hd-->
+					<div class="bd">
+						<div class="bd_l">
+							<div class="bd_r">
+								<!--scroll_box(图片滚动)-->
+
+								<div class="tab_scrollPic" id="tab_bd" >
+									 
+									<div class="m_tcon clearfix"  id="tabslide_0"  style="display: none;">
+										<textarea>
+										
+										<div class="m_tcontent" id="tabslide_0_content">
+											<ul>
+													<!--{settpl cwdq 宠物大全}-->
+													<li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130511.html" target="_blank" title="爆音龙"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G131105139.gif" width="110" height="80" alt="爆音龙" />爆音龙</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130510.html" target="_blank" title="御狐仙"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G1100SL0.gif" width="110" height="80" alt="御狐仙" />御狐仙</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130509.html" target="_blank" title="幽灵鲸"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G1301S0S.gif" width="110" height="80" alt="幽灵鲸" />幽灵鲸</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130506.html" target="_blank" title="南瓜娘"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G12T311c.gif" width="110" height="80" alt="南瓜娘" />南瓜娘</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130505.html" target="_blank" title="刺儿球"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G11024V39.gif" width="110" height="80" alt="刺儿球" />刺儿球</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130504.html" target="_blank" title="地狱主"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G12H3R92.gif" width="110" height="80" alt="地狱主" />地狱主</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/chongwu/130501.html" target="_blank" title="漩涡丸"><img src="http://newsimg.5054399.com/uploads/userup/1112/0G1093Y613.gif" width="110" height="80" alt="漩涡丸" />漩涡丸</a></li>											</ul>
+										</div>
+										<span title="向左" class="arrow_left" id="tab_left_0">向左</span>
+										<span title="向右" class="arrow_right" id="tab_right_0">向右</span>
+										</textarea>
+									</div>
+									<div class="m_tcon clearfix" id="tabslide_1" style="display: none;">
+										<textarea>
+										
+										<div class="m_tcontent" id="tabslide_1_content">
+										<ul>
+												<!--{settpl zbzs 装备展示}-->
+												<li><a href="http://news.4399.com/gonglue/hzdmx/zb/130670.html" target="_blank" title="海贼大冒险航海士"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q0114494R.gif" width="110" height="80" alt="海贼大冒险航海士" />海贼大冒险航海士</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/zb/130669.html" target="_blank" title="海贼大冒险黑足"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q011114057.gif" width="110" height="80" alt="海贼大冒险黑足" />海贼大冒险黑足</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/zb/130668.html" target="_blank" title="海贼大冒险剑豪"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q010543239.gif" width="110" height="80" alt="海贼大冒险剑豪" />海贼大冒险剑豪</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/zb/130667.html" target="_blank" title="海贼大冒险战王装备"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q01034C33.gif" width="110" height="80" alt="海贼大冒险战王装备" />海贼大冒险战王装备</a></li>										</ul>
+										</div>
+										<span title="向左" class="arrow_left" id="tab_left_1">向左</span>
+										<span title="向右" class="arrow_right" id="tab_right_1">向右</span>
+										</textarea>
+									</div>
+									<div class="m_tcon clearfix" id="tabslide_2" style="display: none;">
+
+										<textarea>
+										
+										<div class="m_tcontent" id="tabslide_2_content">
+										<ul>
+												<!--{settpl lszq 灵兽坐骑}-->
+												<li><a href="http://news.4399.com/gonglue/hzdmx/lingshou/130498.html" target="_blank" title="圣甲虫"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q00622M45.gif" width="110" height="80" alt="圣甲虫" />圣甲虫</a></li><li><a href="http://news.4399.com/gonglue/hzdmx/lingshou/130454.html" target="_blank" title="迅捷海龟"><img src="http://newsimg.5054399.com/uploads/userup/1112/0Q006413336.gif" width="110" height="80" alt="迅捷海龟" />迅捷海龟</a></li>										</ul>
+										</div>
+										<span title="向左" class="arrow_left" id="tab_left_2">向左</span>
+										<span title="向右" class="arrow_right" id="tab_right_2">向右</span>
+										</textarea>
+									</div>
+								</div>
+								<!--/scroll_box-->
+							</div>
+						</div>
+					</div>
+					<div class="fd"><span class="lb"></span><span class="rb"></span></div>
+
+				</div>
+	<!--/mod_adaptive-->
+</div>
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/jquery-1.4.min.js"></script>
+<script src="js/jQuery.rglSlide.js" type="text/javascript"></script>
+<script src="js/jQuery.tabLazy.js" type="text/javascript"></script>
+<script type="text/javascript">
+mod_f2er.topBar('tab、内容延迟、左右滚动','toolbar');
+mod_f2er.bottomBar('bottomBar');
+ function tab_one(i){
+    var _obj=$("#tabslide_"+i+"_content");	
+	_obj.rglSlide({
+		productScrollWitch:"ul",
+		list:"ul>li",
+		row:1,
+		seeColumn:6,
+		step:2,
+		isAutoPlay:false,
+		isBtn:{
+				step:1,
+				left:"#tab_right_"+i,
+				right:"#tab_left_"+i,
+				leftDisableCss:"disable",
+				rightDisableCss:"disable"
+			}
+	});
+}
+
+TabLoad({
+    	_tabHandle : $("#tab_ul li"),
+    	_curClass : "current",
+		_bdHandle : $('#tab_bd'),
+		_conHandle : ".m_tcon",
+		_flag : "tflag",
+		_eventType : "click",
+		_num :0,
+		_tabCon : "tabslide_",
+		_callback: function(i){
+			tab_one(i);
+		}
+	})
+</script>
+</body>
+</html>
