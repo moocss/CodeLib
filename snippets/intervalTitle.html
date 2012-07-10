@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>百炼成仙</title>
+		<meta charset="utf-8"/>
+		<style>
+		*{ margin:0; padding:0;}
+		#text{ font-size:14px;color:#f00}
+		</style>
+	</head>
+	<body>
+		<script>
+			/*标题闪烁*/
+			(function(win,undefined){
+				var _doc = win.document;
+				function animateTitle(title,tip){
+					var _space = tip || "",
+						_isShow = false; //是否显示
+						
+					if( _space == ""){
+						for(var j=title.length-1;j>=0;j--){
+							_space +=" ";
+						}
+					}else{
+						_space = tip;
+					}
+					
+					function changeTitle(){
+						var _fun = arguments.callee;
+						if(_isShow){
+							_doc.title = _title;
+							_isShow = false;
+						}else{
+							_doc.title = _space;
+							_isShow = true;
+						}
+						setTimeout(function(){_fun();},1000);
+					}
+					changeTitle();
+				}
+				win.animateTitle = animateTitle ;
+			})(window);
+			
+			/*运行*/
+			var _title = document.title;
+			animateTitle(_title);
+		</script>
+	</body>
+</html>
