@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mod_carousel{ height:200px; overflow:hidden; position:relative; width:520px; margin:0 auto;}
+.mod_carousel .m_bd{height:200px; width:520px; overflow:hidden;}
+.mod_carousel .m_ul{ position:absolute;}
+.mod_carousel .m_ul li{ float:left;}
+.mod_carousel .m_ul li a { display: block;height: 200px;text-decoration: none;width: 520px;}
+.mod_carousel .m_num { bottom: 10px;position: absolute;right: 10px;}
+.mod_carousel .m_num li{ background:url(../image/ico.jpg) -73px 0 no-repeat;float:left; margin-right:2px; color:#fff; cursor:pointer; display:inline; font-size:11px; height:20px; line-height:20px; text-align:center; width:20px;}
+.mod_carousel .m_num .current{ background-position:-97px 0;}
+.mod_carousel .img_loading{ background:url('../image/loading.gif') no-repeat center center;}
+
