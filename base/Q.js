@@ -5,7 +5,7 @@
 (function(win,undefined){
 	var Q = win.Q || {};
 	
-	/*dom*/
+	/*===dom===*/
 	Q.dom = Q.dom || {};
 	
 	Q.g = Q.dom.g = function(id){
@@ -30,7 +30,7 @@
 		return _e.target || _e.srcElement;
 	}
 	
-	/*function*/
+	/*===function===*/
 	Q.fn = Q.fn || {};
 	
 	Q.extend = Q.fn.extend = function(destination,source){
@@ -40,6 +40,7 @@
 		return destination;
 	}
 	
+	/*消除空格，返回dom对象*/
 	Q.clearbank = Q.fn.clearbank = function(obj){
 		for( var i = 0,len = obj.children.length;i<len;i++){
 			if( obj.children[i].nodeType != 1){
@@ -49,7 +50,7 @@
 		return obj;
 	}
 	
-	/*event*/
+	/*===event===*/
 	Q.event = Q.event || {};
 	Q.add = Q.event.add = function(obj,type,fn){
 		if( obj.addEventListener ){

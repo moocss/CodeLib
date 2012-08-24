@@ -7,31 +7,29 @@
 
 /*carousel*/
 (function(win,Q,undefined){
-
 	/*FocusCarousel*/
 	function FocusCarousel(ctg){
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "js_num",//js_num
+						 numList : "js_num",
 					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
-							 num : 0,
-						   speed : 300, 
-						   step  : 24,
+							 num : 0,/*初始化焦点数*/
+						   speed : 300, /*延迟时间*/
+						   step  : 24, /*每次增进、减少的大小*/
 					      effect : {
 									 efficacy : "slide", /*transparent,slide*/
-									 direction : 0 
+									 direction : 1 
 								},
-							 /*Btn : null,*/
 							 Btn : {
 									left : "js_leftBtn",
 									right : "js_rightBtn",
 									leftClass : "leftBtn",
 									rightClass : "rightBtn",
 									btnDisable : "_disable"
-								},
+								}, /*Btn : null*/
 						autoPlay : {
 									play : false,
 									intervalTime : 2000
@@ -44,8 +42,8 @@
 		this._autoTimer = null;
 		this.LENGTH = 0; 
 		this.WIDTH = this.HEIGHT = 0; 
-		if( !(this instanceof FocusCarousel)){
-			return new FocusCarousel(ctg);
+		if( !(this instanceof arguments.callee)){
+			return new arguments.callee(ctg);
 		}
 		this.init();
 	}
@@ -53,10 +51,8 @@
 	var Tween = {
 		slide: {
 				easeOut: function(t, b, c, d) {
-					//return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
-					//console.log( (t == d) ? b + c: c * (0.5 + 1) + b);
 					return (t == d) ? b + c: c * (0.5 + 1) + b;
-			}
+				}
 		},
 		transparent : {
 				setOpacity : function(obj,opacityValue){
@@ -66,6 +62,7 @@
 			}
 		}
 	}
+	
 	FocusCarousel.prototype = {
 		constructor : FocusCarousel,
 		numList : function(){
@@ -99,7 +96,6 @@
 				timer = null;
 			}
 		},
-		
 		opacityShow : function(obj){
 			var that = this,
 				_opacity = 0;
@@ -131,16 +127,14 @@
 				_width = _height = 0;
 			function animate(){
 				if( that.setting.effect.direction == 1 ){
-					
 					if( _width < that.WIDTH ){
 						_width += that.setting.step;
 						that.setSlide(obj,n,_width);
 					}else{
 						that.clearTimer( that._timer );
-						//_width = 0;
+						_width = 0;
 					}
 				}else if( that.setting.effect.direction == 0 ){
-					
 					if( _height < that.HEIGHT ){
 						_height += that.setting.step;
 						that.setSlide(obj,n,_height);
@@ -150,7 +144,6 @@
 					}
 				}
 			}
-			
 			that._timer = setInterval(animate,that.setting.speed);
 		},
 		BtnState : function(){
@@ -159,7 +152,6 @@
 			that.checkType(that.setting.numList,function(){
 				var _numList = that.numList();
 			});
-			
 			that.checkType(that.setting.Btn,function(){
 				var _leftBtn = Q.g( that.setting.Btn.left ),
 					_rightBtn = Q.g( that.setting.Btn.right ),
@@ -201,7 +193,6 @@
 					}
 				}
 			}
-			
 			if( that.setting.effect.efficacy == "slide"){
 				that.slideShow(_imgContainer,n);
 			}
@@ -224,17 +215,16 @@
 				_imgList = that.imgList(),
 				_imgContainer = Q.g( that.setting.imgList );
 			that.LENGTH = _imgContainer.children.length;
-			
 			that.checkType( Q.g(that.setting.numList),function(){
 				var _numList = that.numList();
 				_numList[i].className = that.setting.currentClass;
-			})
+			});
 			if(that.setting.effect.efficacy == "transparent"){
 				Tween.transparent.setOpacity(_imgList[i],100);
 			}else if(that.setting.effect.efficacy == "slide"){
 				var _arg = that.setting.effect.direction ? that.WIDTH : that.HEIGHT;
 				that.setSlide(_imgContainer,i,_arg);
-			}
+			};
 			that.BtnState();
 		},
 		rightEvent : function(lobj,robj){
@@ -277,7 +267,7 @@
 			
 			if( that.setting.autoPlay.play ){
 				that.autoSlide();
-				Q.on( _slideContainer ,"mouseover",function(e){
+				Q.add( _slideContainer ,"mouseover",function(e){
 					that.clearTimer( that._autoTimer );
 				});
 
@@ -288,7 +278,7 @@
 			
 			that.checkType( Q.g(that.setting.numList),function(){
 				Q.add( Q.g(that.setting.numList ),that.setting.eventType,function(e){
-					var _target = Q.getTarget(e);
+					var _target = Q.target(e);
 					if( _target.nodeName.toLowerCase() != that.setting.slideTarget ){
 						return;
 					}

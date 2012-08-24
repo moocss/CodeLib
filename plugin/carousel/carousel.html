@@ -2,11 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>情封 焦点图</title>
+<title>情封 焦点轮播插件</title>
 <style>
 	*{margin:0;padding:0;}
 	ul{list-style:none;}
-	.ox_box{ width:1000px; margin:60px auto; position:relative;}
+	.demo_box{ width:1000px; margin:60px auto; position:relative;}
+	.demo_box h2{font-size:12px; margin-bottom:10px;}
+	.mt20{ margin-top:20px;}
+	
+	/*组件样式*/
 	.leftBtn,.rightBtn,.leftBtn_disable,.rightBtn_disable {position:absolute;top:120px;width:20px; text-align:center;line-height:50px;height:50px;display:block; border:1px solid #ddd;background:#f00;cursor:pointer;}
 	.leftBtn{ left:0;}
 	.leftBtn_disable{ background:#ccc;left:0;cursor:default;}
@@ -24,41 +28,124 @@
 	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
 	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
 	.ui_tabslide li.current{ opacity :1}
+	
+	.jypt_box{ border:1px solid #d9d9d9; background-color:#fff; padding:15px 15px  10px;}
+	.jypt_box h2,.jypt_cont_bx .jypt_hd h2{font-family:microsoft YaHei; font-size:16px; color:#333; font-weight:500;}
+	.jypt_cont_bx .jypt_hd { border-top:1px solid #d9d9d9; border-right:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9; border-left:2px solid #f55e13; height:26px; background-color:#f5f5f5; padding:11px  15px }
+	.jypt_cont_bx .jypt_hd h2{ float:left;}
+	.jypt_cont_bx .jypt_hd .icon{ background-position:0 -34px; width:22px; height:11px; margin:7px 0 0 5px;}
+	.jypt_cont_bx .jypt_bd{ border:solid 1px #d9d9d9; border-top:0; padding:15px; overflow:hidden; background:#fff; zoom:1;}
+	.m_news_trade{ height:36px; line-height:36px; margin-top:10px; padding:0; overflow:hidden;}
+	.m_news_trade h2{ background:url(../images/news_h2_bg.png) right 0 no-repeat #f5f5f5; float:left; width:93px; height:36px;line-height:36px; overflow:hidden; padding-left:15px;}
+	.m_news_trade .text_scroll_bx{ padding:0px 0 0px 10px;height:36px;line-height:36px; float:left; width:505px; overflow:hidden; }
+	.text_scroll_bx strong{ color:#ff5c00;}
+	.flag_btn_bx a{ float:left;*displauy:inline;*zoom:1; margin-right:3px; width:20px; height:20px; overflow:hidden; text-indent:-999em; cursor:pointer; background:url(images/flag_btn.png) no-repeat;}
+	.flag_btn_bx a:hover{ background-position:0 -21px;}
+	.flag_btn_bx .up{ background-position:0 -42px;}
+	.flag_btn_bx .up:hover{ background-position:0 -63px;}
+	.m_news_trade .flag_btn_bx {
+		padding: 8px 6px 0 0;
+	}
+	.txt_bd{ height:36px;line-height:36px;}
 </style>
 </head>
 <body>
-<div class="ox_box">
-  <span class="leftBtn" id="js_leftBtn">&lt;</span>
-  <span class="rightBtn" id="js_rightBtn">&gt;</span>
-  <!--ui_tabslide-->
-  <div class="ui_tabslide" id="j_tabslide">
-	<div class="ui_ts_bd">
-		<ul class="img_list slideEvent clearfix" id="js_imgList">
-			<li><a target="_blank" href="http://piao.qq.com/acts/app/anhao.html"><img width="980" height="300" title="发暗号得Q币"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/QB93.jpg"></a></li>
-			<li><a target="_blank" href="http://piao.qq.com/acts/dy/disney.html"><img width="980" height="300" title="异星战场"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ys93.jpg"></a></li>
-			<li><a target="_blank" href="http://s.qq.com/act/a20120302moive/index.htm"><img width="980" height="300" title="春娇与志明"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/cjyzm.jpg"></a></li>
-			<li><a target="_blank" href="http://piao.qq.com/acts/jd/gotrip.html"><img width="980" height="300" title="会员专享特权" src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ls93.jpg"></a></li>
-			<li><a target="_blank" href="http://piao.qq.com/acts/star/leehom2012.html"><img width="980" height="300" title="王力宏巡回演唱会"  src="http://img1.gtimg.com/3/363/36345/3634535_1200x1000_0.jpg"></a></li>
-			<li><a target="_blank" href="http://piao.qq.com/yanchu/detail/35/detail_13235_101.html"><img width="980" height="300" title="丁当2012上海演唱会" l src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/dd980x300.jpg"></a></li>
-		</ul>
+
+<div class="demo_box">
+  <h2>实例一:图片焦点滚动</h2>
+  <!--app-carousel-->
+  <div class="app-carousel">
+	  <span class="leftBtn" id="js_leftBtn">&lt;</span>
+	  <span class="rightBtn" id="js_rightBtn">&gt;</span>
+	  <!--ui_tabslide-->
+	  <div class="ui_tabslide" id="j_tabslide">
+		<div class="ui_ts_bd">
+			<ul class="img_list slideEvent clearfix" id="js_imgList">
+				<li><a target="_blank" href="http://piao.qq.com/acts/app/anhao.html"><img width="980" height="300" title="发暗号得Q币"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/QB93.jpg"></a></li>
+				<li><a target="_blank" href="http://piao.qq.com/acts/dy/disney.html"><img width="980" height="300" title="异星战场"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ys93.jpg"></a></li>
+				<li><a target="_blank" href="http://s.qq.com/act/a20120302moive/index.htm"><img width="980" height="300" title="春娇与志明"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/cjyzm.jpg"></a></li>
+				<li><a target="_blank" href="http://piao.qq.com/acts/jd/gotrip.html"><img width="980" height="300" title="会员专享特权" src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ls93.jpg"></a></li>
+				<li><a target="_blank" href="http://piao.qq.com/acts/star/leehom2012.html"><img width="980" height="300" title="王力宏巡回演唱会"  src="http://img1.gtimg.com/3/363/36345/3634535_1200x1000_0.jpg"></a></li>
+				<li><a target="_blank" href="http://piao.qq.com/yanchu/detail/35/detail_13235_101.html"><img width="980" height="300" title="丁当2012上海演唱会" l src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/dd980x300.jpg"></a></li>
+			</ul>
+		</div>
+		<div class="ui_num">
+			<ul class="clearfix" id="js_num">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	  </div>
+	  <!--/ui_tabslide-->
 	</div>
-	<div class="ui_num">
-		<ul class="clearfix" id="js_num">
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
-		</ul>
+	<!--/app-carousel-->
+	
+	<h2 class="mt20">实例二:文字滚动</h2>
+	<!--app-carousel-->
+	<div class="app-carousel">
+	  <!-- m_news_trade-->
+          <div class="jypt_box m_news_trade clearfix">
+          	<h2>最新成交</h2>
+            <div class="text_scroll_bx" id="j_txtslide">
+				<div class="txt_bd">
+					<ul id="js_txtList">
+						<li>
+							 <span  class="title">华夏1　　宝芝林/忘忧谷　　华夏币　　</span>
+							 <span  class="deal-price"><strong>300.0</strong> 华夏币</span>
+							 <span  class="unit-price"><strong>&yen;51.0</strong></span>
+						</li>
+						<li>
+							 <span  class="title">华夏2　　宝芝林/忘忧谷　　华夏币　　</span>
+							 <span  class="deal-price"><strong>300.0</strong> 华夏币</span>
+							 <span  class="unit-price"><strong>&yen;51.0</strong></span>
+						</li>
+						<li>
+							 <span  class="title">华夏3　　宝芝林/忘忧谷　　华夏币　　</span>
+							 <span  class="deal-price"><strong>300.0</strong> 华夏币</span>
+							 <span  class="unit-price"><strong>&yen;51.0</strong></span>
+						</li>
+					</ul>
+				</div>
+            </div>
+            <div class="flag_btn_bx right">
+            	<a class="down" id="js_downBtn" href="javascript:void(0)">下</a><a class="up" id="js_upBtn"  href="javascript:void(0)">上</a>
+            </div>
+         </div>
+         <!-- /m_news_trade-->
 	</div>
-  </div>
-  <!--/ui_tabslide-->
+	<!--/app-carousel-->
 </div>
 <script src="../../base/Q.js"></script>
 <script src="js/carousel.js" type="text/javascript"></script>
 <script type="text/javascript">
-FocusCarousel({slideContainer : "j_tabslide",speed : 10});
+FocusCarousel({slideContainer : "j_tabslide",speed : 100,step:100,effect : {
+						efficacy : "slide",
+						direction : 0
+					}});
+FocusCarousel({slideContainer : "j_txtslide",
+			  speed : 100,
+			   step : 9,
+			   effect : {
+						efficacy : "slide",
+						direction : 0
+				},
+				imgList : "js_txtList",
+				numList:"",
+				Btn : {
+						left : "js_downBtn",
+						right : "js_upBtn",
+						leftClass : "up",
+						rightClass : "down",
+						btnDisable : "_disable"
+					},
+				autoPlay : {
+									play : true,
+									intervalTime : 2000
+								}});
 </script>
 </body>
 </html>
