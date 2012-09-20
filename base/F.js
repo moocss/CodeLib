@@ -106,6 +106,9 @@
 		isArray : function(obj){
 			return toString.call(obj) == "[object Array]";
 		},
+		/*检测元素是否在数组中
+		 *返回元素的位置序号
+		*/
 		inArray : function(element,array){
 			/*非IE6,7,8*/
 			if( array.indexOf ){
@@ -147,7 +150,7 @@
 					}
 				}
 			}
-			 return object;
+			return object;
 		}
 	});
 	
